@@ -1,57 +1,56 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let user = localStorage.getItem("user");
 
+/* منتجات */
 let products = [
-{name:"هاتف", price:200},
-{name:"حاسوب", price:500},
-{name:"سماعات", price:50},
-{name:"لوحة مفاتيح", price:70}
+{name:"هاتف", price:200, desc:"هاتف ذكي", sale:150},
+{name:"حاسوب", price:500, desc:"حاسوب قوي", sale:null},
+{name:"سماعات", price:50, desc:"صوت ممتاز", sale:30},
+{name:"كيبورد", price:70, desc:"إضاءة RGB", sale:null}
 ];
 
-function renderProducts(list){
+/* عرض المنتجات */
+function renderProducts(){
 let container = document.getElementById("products");
 if(!container) return;
 
-container.innerHTML = "";
+container.innerHTML="";
 
-list.forEach(p=>{
+products.forEach(p=>{
 container.innerHTML += `
 <div class="card">
 <h3>${p.name}</h3>
-<p>${p.price}$</p>
-<button onclick="add('${p.name}',${p.price})">أضف للسلة</button>
+<p>${p.desc}</p>
+<p>${p.sale ? `<span class="sale">${p.sale}$</span> <del>${p.price}$</del>` : p.price+"$"}</p>
+<button onclick="add('${p.name}',${p.sale || p.price})">أضف</button>
 </div>`;
 });
 }
 
+/* إضافة للسلة */
 function add(name,price){
 cart.push({name,price});
 localStorage.setItem("cart",JSON.stringify(cart));
 alert("تمت الإضافة");
 }
 
+/* عرض السلة */
 function showCart(){
-let list = document.getElementById("cart");
-let total = 0;
-list.innerHTML="";
+let list=document.getElementById("cart");
+let total=0;
 
 cart.forEach(i=>{
-list.innerHTML += `<li>${i.name} - ${i.price}$</li>`;
-total += i.price;
+list.innerHTML+=`<li>${i.name} - ${i.price}$</li>`;
+total+=i.price;
 });
 
-document.getElementById("total").innerText = total + "$";
+document.getElementById("total").innerText=total+"$";
 }
 
-function search(){
-let value = document.getElementById("search").value;
-let filtered = products.filter(p=>p.name.includes(value));
-renderProducts(filtered);
-}
-
-function checkout(){
-let msg = "طلب:\n";
-cart.forEach(i=>{
-msg += i.name + " - " + i.price + "$\n";
-});
-window.open("https://wa.me/213XXXXXXXXX?text=" + encodeURIComponent(msg));
+/* تسجيل */
+function login(){
+let name=document.getElementById("name").value;
+localStorage.setItem("user",name);
+alert("تم تسجيل الدخول");
+window.location="index.html";
 }
