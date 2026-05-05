@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>المتجر</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body onload="renderProducts(products)">
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="cart.html">السلة</a>
+</nav>
+
+<div class="container">
+<h1>المنتجات</h1>
+
+<input id="search" placeholder="ابحث..." onkeyup="search()">
+
+<div id="products" class="products"></div>
+</div>
+
+</body>
+</html>
