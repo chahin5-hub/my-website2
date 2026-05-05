@@ -1,0 +1,17 @@
+async function renderProducts(){
+let res = await fetch("http://localhost:3000/api/products");
+let data = await res.json();
+
+let container = document.getElementById("products");
+container.innerHTML="";
+
+data.forEach(p=>{
+container.innerHTML += `
+<div class="card">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<p>${p.price}$</p>
+<button onclick="add('${p.name}',${p.price})">شراء</button>
+</div>`;
+});
+}
