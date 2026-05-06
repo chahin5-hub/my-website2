@@ -9,15 +9,18 @@
 
 <body onload="showCart()">
 
-<nav>
-<a href="shop.html">المتجر</a>
-</nav>
+<h1>🛒 سلة المشتريات</h1>
 
-<h1>🧾 سلة المشتريات</h1>
+<div id="cart"></div>
 
-<ul id="cart"></ul>
+<h3>Subtotal: <span id="subtotal"></span></h3>
+<h3>Tax: <span id="tax"></span></h3>
+<h2>Total: <span id="total"></span></h2>
 
-<h2>💰 المجموع: <span id="total">0$</span></h2>
+<input id="coupon" placeholder="كود الخصم">
+<button onclick="applyCoupon()">تطبيق</button>
+
+<br><br>
 
 <button onclick="clearCart()">🧹 تفريغ السلة</button>
 
