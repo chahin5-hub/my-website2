@@ -1,17 +1,17 @@
-const router = require("express").Router();
-const Product = require("../models/Product");
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>منتج</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
 
-// إضافة منتج
-router.post("/", async (req,res)=>{
-  const p = new Product(req.body);
-  await p.save();
-  res.send("تمت الإضافة");
-});
+<body onload="loadProduct()">
 
-// عرض المنتجات
-router.get("/", async (req,res)=>{
-  const products = await Product.find();
-  res.json(products);
-});
+<h1>📦 تفاصيل المنتج</h1>
 
-module.exports = router;
+<div id="product"></div>
+
+</body>
+</html>
