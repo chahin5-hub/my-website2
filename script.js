@@ -1,118 +1,64 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let coupon = localStorage.getItem("coupon") || "";
 
-/* إضافة */
-function add(name,price,img){
-let item = cart.find(i=>i.name===name);
+let products = [
+/* إلكترونيات */
+{
+name:"هاتف ذكي",
+price:200,
+sale:150,
+category:"electronics",
+img:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+desc:"هاتف حديث",
+specs:"8GB RAM",
+rating:"⭐⭐⭐⭐⭐"
+},
+{
+name:"تابلت",
+price:180,
+category:"electronics",
+img:"https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
+desc:"جهاز لوحي",
+specs:"10 inch",
+rating:"⭐⭐⭐⭐"
+},
 
-if(item){
-item.qty++;
-}else{
-cart.push({name,price,qty:1,img});
+/* حواسيب */
+{
+name:"حاسوب محمول",
+price:500,
+category:"computers",
+img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+desc:"قوي",
+specs:"i7",
+rating:"⭐⭐⭐⭐⭐"
+},
+{
+name:"حاسوب مكتبي",
+price:700,
+category:"computers",
+img:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
+desc:"للألعاب",
+specs:"RTX",
+rating:"⭐⭐⭐⭐⭐"
+},
+
+/* إكسسوارات */
+{
+name:"سماعات",
+price:50,
+sale:30,
+category:"accessories",
+img:"https://images.unsplash.com/photo-1518444065439-e933c06ce9cd",
+desc:"صوت نقي",
+specs:"Bluetooth",
+rating:"⭐⭐⭐⭐⭐"
+},
+{
+name:"ماوس",
+price:25,
+category:"accessories",
+img:"https://images.unsplash.com/photo-1587825140400-2f3c9f9b2a3f",
+desc:"احترافي",
+specs:"RGB",
+rating:"⭐⭐⭐⭐"
 }
-
-save();
-notify("تمت الإضافة للسلة 🛒");
-}
-
-function save(){
-localStorage.setItem("cart",JSON.stringify(cart));
-}
-
-/* عرض */
-function showCart(){
-let list = document.getElementById("cart");
-let subtotal = 0;
-
-list.innerHTML="";
-
-cart.forEach((i,index)=>{
-let sub = i.price * i.qty;
-subtotal += sub;
-
-list.innerHTML += `
-<div class="item">
-<img src="${i.img}">
-<h3>${i.name}</h3>
-
-<p>${i.price}$</p>
-
-<div>
-<button onclick="changeQty(${index},1)">➕</button>
-${i.qty}
-<button onclick="changeQty(${index},-1)">➖</button>
-</div>
-
-<p>المجموع: ${sub}$</p>
-
-<button onclick="removeItem(${index})">❌</button>
-<hr>
-</div>
-`;
-});
-
-/* حساب */
-let tax = subtotal * 0.1;
-let total = subtotal + tax;
-
-/* كوبون */
-if(coupon === "SALE10"){
-total *= 0.9;
-}
-
-document.getElementById("subtotal").innerText = subtotal.toFixed(2)+"$";
-document.getElementById("tax").innerText = tax.toFixed(2)+"$";
-document.getElementById("total").innerText = total.toFixed(2)+"$";
-}
-
-/* كمية */
-function changeQty(i,d){
-cart[i].qty += d;
-
-if(cart[i].qty <= 0){
-cart.splice(i,1);
-}
-
-save();
-showCart();
-}
-
-/* حذف */
-function removeItem(i){
-cart.splice(i,1);
-save();
-showCart();
-}
-
-/* كوبون */
-function applyCoupon(){
-let c = document.getElementById("coupon").value;
-
-if(c === "SALE10"){
-coupon = c;
-localStorage.setItem("coupon",c);
-notify("تم تطبيق الخصم 🎉");
-}else{
-notify("كود غير صحيح ❌");
-}
-
-showCart();
-}
-
-/* تفريغ */
-function clearCart(){
-cart = [];
-save();
-showCart();
-}
-
-/* إشعار */
-function notify(msg){
-let n = document.createElement("div");
-n.className="notify";
-n.innerText=msg;
-
-document.body.appendChild(n);
-
-setTimeout(()=>{n.remove()},2000);
-}
+];
