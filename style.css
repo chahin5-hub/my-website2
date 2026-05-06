@@ -1,39 +1,53 @@
+
+/* ===== الأساس ===== */
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
 }
 
-/* Navbar */
+/* ===== Navbar ===== */
 nav{
 display:flex;
 justify-content:space-between;
-padding:15px;
+align-items:center;
+padding:15px 30px;
 background:#020617;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 nav a{
 color:white;
-margin:10px;
+margin:0 10px;
 text-decoration:none;
+transition:0.3s;
 }
 
-/* Hero */
+nav a:hover{
+color:#38bdf8;
+}
+
+/* ===== Hero ===== */
 .hero{
 text-align:center;
-padding:60px;
+padding:70px 20px;
 background:linear-gradient(45deg,#22c55e,#38bdf8);
 color:black;
 }
 
-/* Products */
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* ===== Products ===== */
 .products{
 display:flex;
 flex-wrap:wrap;
-gap:20px;
 justify-content:center;
-padding:20px;
+gap:20px;
+padding:30px;
 }
 
 .card{
@@ -41,27 +55,29 @@ background:#1e293b;
 padding:20px;
 border-radius:15px;
 width:230px;
-transition:0.3s;
 position:relative;
+transition:0.3s;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
-img{
+.card img{
 width:100%;
 border-radius:10px;
 }
 
-button{
-background:#22c55e;
-border:none;
-padding:10px;
-border-radius:10px;
-color:white;
-cursor:pointer;
-margin:5px;
+/* ===== الأسعار ===== */
+.price{
+margin:10px 0;
+}
+
+.sale{
+color:yellow;
+font-weight:bold;
 }
 
 .badge{
@@ -69,16 +85,129 @@ position:absolute;
 top:10px;
 left:10px;
 background:red;
-padding:5px;
+padding:5px 10px;
 border-radius:8px;
 font-size:12px;
 }
 
+/* ===== التقييم ===== */
 .rating{
 color:gold;
+margin:5px 0;
 }
 
+/* ===== الأزرار ===== */
+button{
+background:#22c55e;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#16a34a;
+transform:scale(1.05);
+}
+
+/* ===== المفضلة ===== */
 .favorite{
 cursor:pointer;
 font-size:20px;
+display:inline-block;
+margin:5px;
+transition:0.3s;
+}
+
+.favorite:hover{
+transform:scale(1.2);
+color:red;
+}
+
+/* ===== السلة ===== */
+.item{
+background:#1e293b;
+padding:15px;
+margin:15px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.item img{
+width:80px;
+border-radius:10px;
+}
+
+.item h3{
+margin:0;
+}
+
+/* ===== الكمية ===== */
+.qty{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.qty button{
+padding:5px 10px;
+}
+
+/* ===== الإجمالي ===== */
+.summary{
+text-align:center;
+padding:20px;
+background:#020617;
+border-radius:10px;
+margin:20px;
+}
+
+/* ===== input ===== */
+input{
+padding:10px;
+border-radius:10px;
+border:none;
+margin:10px;
+}
+
+/* ===== إشعارات ===== */
+.notify{
+position:fixed;
+top:20px;
+right:20px;
+background:#22c55e;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px #22c55e;
+animation:fade 2s;
+}
+
+@keyframes fade{
+0%{opacity:0; transform:translateY(-20px);}
+10%{opacity:1;}
+90%{opacity:1;}
+100%{opacity:0; transform:translateY(-20px);}
+}
+
+/* ===== صفحات عامة ===== */
+.container{
+padding:30px;
+text-align:center;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+.products{
+flex-direction:column;
+align-items:center;
+}
+
+.item{
+flex-direction:column;
+text-align:center;
+}
 }
