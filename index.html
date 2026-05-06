@@ -1,36 +1,131 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>الرئيسية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر احترافي</title>
 <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 
 <body>
 
+<!-- ===== Navbar ===== -->
 <nav>
 <div>
-<a href="index.html">الرئيسية</a>
-<a href="shop.html">المتجر</a>
-<a href="cart.html">السلة</a>
+<a href="#">🏠 الرئيسية</a>
+<a href="shop.html">🛒 المتجر</a>
+<a href="cart.html">🧾 السلة</a>
+<a href="contact.html">📞 تواصل</a>
 </div>
+
 <div>
-<a href="login.html">دخول</a>
+<a href="login.html">🔐 دخول</a>
 </div>
 </nav>
 
-<div class="hero">
-<h1>🔥 متجر المستقبل</h1>
-<p>أفضل المنتجات بأفضل الأسعار</p>
-</div>
+<!-- ===== Hero ===== -->
+<section class="hero">
+<h1>🔥 أفضل متجر إلكتروني</h1>
+<p>خصومات تصل إلى 50% لفترة محدودة</p>
+<a href="shop.html">
+<button>ابدأ التسوق الآن 🚀</button>
+</a>
+</section>
 
-<h2 style="text-align:center;">الأقسام</h2>
+<!-- ===== Categories ===== -->
+<section class="container">
+<h2>🛍️ الأقسام</h2>
 
 <div class="products">
 <div class="card">📱 إلكترونيات</div>
 <div class="card">💻 حواسيب</div>
 <div class="card">🎧 إكسسوارات</div>
+<div class="card">⌚ ساعات</div>
 </div>
+</section>
+
+<!-- ===== Featured Products ===== -->
+<section class="container">
+<h2>⭐ منتجات مميزة</h2>
+
+<div class="products">
+
+<div class="card">
+<span class="badge">🔥</span>
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+<h3>هاتف ذكي</h3>
+<p>هاتف حديث</p>
+<p><span class="sale">150$</span> <del>200$</del></p>
+<button onclick="add('هاتف',150,'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9')">أضف</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+<h3>حاسوب</h3>
+<p>قوي للأعمال</p>
+<p>500$</p>
+<button onclick="add('حاسوب',500,'https://images.unsplash.com/photo-1517336714731-489689fd1ca8')">أضف</button>
+</div>
+
+<div class="card">
+<span class="badge">🔥</span>
+<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
+<h3>سماعات</h3>
+<p>صوت نقي</p>
+<p><span class="sale">30$</span> <del>50$</del></p>
+<button onclick="add('سماعات',30,'https://images.unsplash.com/photo-1518444065439-e933c06ce9cd')">أضف</button>
+</div>
+
+</div>
+</section>
+
+<!-- ===== Offer Banner ===== -->
+<section class="hero">
+<h2>🎁 عرض خاص</h2>
+<p>🔥 اشترِ الآن واحصل على خصم إضافي 10%</p>
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="container">
+<h2>⭐ آراء العملاء</h2>
+
+<div class="products">
+
+<div class="card">
+<p>⭐⭐⭐⭐⭐</p>
+<p>متجر رائع وسريع</p>
+</div>
+
+<div class="card">
+<p>⭐⭐⭐⭐</p>
+<p>خدمة ممتازة</p>
+</div>
+
+<div class="card">
+<p>⭐⭐⭐⭐⭐</p>
+<p>أفضل تجربة شراء</p>
+</div>
+
+</div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="container">
+<h2>ℹ️ من نحن</h2>
+<p>
+نحن متجر إلكتروني نقدم أفضل المنتجات بأعلى جودة وأفضل سعر.
+هدفنا هو تقديم تجربة شراء سهلة وسريعة.
+</p>
+</section>
+
+<!-- ===== WhatsApp ===== -->
+<a href="https://wa.me/2130673757838" class="whatsapp">💬</a>
+
+<!-- ===== Footer ===== -->
+<footer style="text-align:center;padding:20px;background:#020617;">
+<p>© 2026 جميع الحقوق محفوظة</p>
+</footer>
 
 </body>
 </html>
