@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>المتجر</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المتجر الاحترافي</title>
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 </head>
+<body>
 
-<body onload="renderProducts()">
+<h1 class="page-title">جميع المنتجات الاحترافية</h1>
 
-<nav>
-<a href="index.html">الرئيسية</a>
-<a href="cart.html">السلة</a>
-</nav>
+<input type="text" id="search" placeholder="ابحث عن منتج..." class="search-input">
 
-<h1 style="text-align:center;">🛒 المنتجات</h1>
+<div class="products-grid">
 
-<div id="products" class="products"></div>
+<div class="card">
+<img src="images/product3.jpg">
+<h3>Laptop</h3>
+<p>$1200</p>
+<button onclick="addToCart('Laptop',1200)">شراء</button>
+</div>
 
+<div class="card">
+<img src="images/product4.jpg">
+<h3>Keyboard</h3>
+<p>$100</p>
+<button onclick="addToCart('Keyboard',100)">شراء</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
