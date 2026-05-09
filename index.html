@@ -1,131 +1,237 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر احترافي</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجري الاحترافي</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===== Navbar ===== -->
-<nav>
-<div>
-<a href="#">🏠 الرئيسية</a>
-<a href="shop.html">🛒 المتجر</a>
-<a href="cart.html">🧾 السلة</a>
-<a href="contact.html">📞 تواصل</a>
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+  🚚 شحن مجاني لجميع الطلبات فوق 300$
 </div>
 
-<div>
-<a href="login.html">🔐 دخول</a>
-</div>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+  <div class="logo">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span>متجري</span>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="ابحث عن منتج...">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+
+  <div class="nav-icons">
+    <a href="#"><i class="fa-regular fa-heart"></i></a>
+    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="#"><i class="fa-regular fa-user"></i></a>
+  </div>
+
 </nav>
 
-<!-- ===== Hero ===== -->
+<!-- ================= MENU ================= -->
+<div class="menu">
+
+  <a href="#">الرئيسية</a>
+  <a href="#">المنتجات</a>
+  <a href="#">العروض</a>
+  <a href="#">الإلكترونيات</a>
+  <a href="#">الملابس</a>
+  <a href="#">تواصل معنا</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
 <section class="hero">
-<h1>🔥 أفضل متجر إلكتروني</h1>
-<p>خصومات تصل إلى 50% لفترة محدودة</p>
-<a href="shop.html">
-<button>ابدأ التسوق الآن 🚀</button>
-</a>
+
+  <div class="hero-text">
+    <h1>عروض الصيف الكبرى</h1>
+    <p>خصومات تصل حتى 50%</p>
+    <button>تسوق الآن</button>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+  </div>
+
 </section>
 
-<!-- ===== Categories ===== -->
-<section class="container">
-<h2>🛍️ الأقسام</h2>
+<!-- ================= FEATURES ================= -->
+<section class="features">
 
-<div class="products">
-<div class="card">📱 إلكترونيات</div>
-<div class="card">💻 حواسيب</div>
-<div class="card">🎧 إكسسوارات</div>
-<div class="card">⌚ ساعات</div>
-</div>
+  <div class="feature">
+    <i class="fa-solid fa-truck"></i>
+    <h3>شحن مجاني</h3>
+    <p>لكل الطلبات</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-shield"></i>
+    <h3>دفع آمن</h3>
+    <p>حماية كاملة</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-rotate-left"></i>
+    <h3>إرجاع سهل</h3>
+    <p>خلال 14 يوم</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-headset"></i>
+    <h3>دعم فني</h3>
+    <p>24/7</p>
+  </div>
+
 </section>
 
-<!-- ===== Featured Products ===== -->
-<section class="container">
-<h2>⭐ منتجات مميزة</h2>
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section">
 
-<div class="products">
+  <div class="section-title">
+    <h2>منتجات مميزة</h2>
+  </div>
 
-<div class="card">
-<span class="badge">🔥</span>
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-<h3>هاتف ذكي</h3>
-<p>هاتف حديث</p>
-<p><span class="sale">150$</span> <del>200$</del></p>
-<button onclick="add('هاتف',150,'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9')">أضف</button>
-</div>
+  <div class="products">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
-<h3>حاسوب</h3>
-<p>قوي للأعمال</p>
-<p>500$</p>
-<button onclick="add('حاسوب',500,'https://images.unsplash.com/photo-1517336714731-489689fd1ca8')">أضف</button>
-</div>
+    <!-- PRODUCT -->
+    <div class="product-card">
 
-<div class="card">
-<span class="badge">🔥</span>
-<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
-<h3>سماعات</h3>
-<p>صوت نقي</p>
-<p><span class="sale">30$</span> <del>50$</del></p>
-<button onclick="add('سماعات',30,'https://images.unsplash.com/photo-1518444065439-e933c06ce9cd')">أضف</button>
-</div>
+      <span class="sale">-20%</span>
 
-</div>
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Nike Air Force</h3>
+
+      <p class="category">أحذية رياضية</p>
+
+      <div class="price">
+        <span class="new-price">$99</span>
+        <span class="old-price">$150</span>
+      </div>
+
+      <button onclick="addToCart('Nike Air Force')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-15%</span>
+
+      <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Apple Watch</h3>
+
+      <p class="category">ساعات ذكية</p>
+
+      <div class="price">
+        <span class="new-price">$250</span>
+        <span class="old-price">$300</span>
+      </div>
+
+      <button onclick="addToCart('Apple Watch')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-30%</span>
+
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Headphones</h3>
+
+      <p class="category">سماعات</p>
+
+      <div class="price">
+        <span class="new-price">$120</span>
+        <span class="old-price">$200</span>
+      </div>
+
+      <button onclick="addToCart('Headphones')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-10%</span>
+
+      <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Smart Phone</h3>
+
+      <p class="category">هواتف</p>
+
+      <div class="price">
+        <span class="new-price">$799</span>
+        <span class="old-price">$999</span>
+      </div>
+
+      <button onclick="addToCart('Smart Phone')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
 
-<!-- ===== Offer Banner ===== -->
-<section class="hero">
-<h2>🎁 عرض خاص</h2>
-<p>🔥 اشترِ الآن واحصل على خصم إضافي 10%</p>
-</section>
+<!-- ================= FOOTER ================= -->
+<footer>
 
-<!-- ===== Reviews ===== -->
-<section class="container">
-<h2>⭐ آراء العملاء</h2>
+  <div class="footer-content">
 
-<div class="products">
+    <div>
+      <h3>متجري</h3>
+      <p>أفضل متجر إلكتروني احترافي</p>
+    </div>
 
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>متجر رائع وسريع</p>
-</div>
+    <div>
+      <h3>روابط</h3>
+      <a href="#">الرئيسية</a>
+      <a href="#">المنتجات</a>
+      <a href="#">تواصل</a>
+    </div>
 
-<div class="card">
-<p>⭐⭐⭐⭐</p>
-<p>خدمة ممتازة</p>
-</div>
+    <div>
+      <h3>السوشيال ميديا</h3>
 
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>أفضل تجربة شراء</p>
-</div>
+      <div class="socials">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
 
-</div>
-</section>
+    </div>
 
-<!-- ===== About ===== -->
-<section class="container">
-<h2>ℹ️ من نحن</h2>
-<p>
-نحن متجر إلكتروني نقدم أفضل المنتجات بأعلى جودة وأفضل سعر.
-هدفنا هو تقديم تجربة شراء سهلة وسريعة.
-</p>
-</section>
+  </div>
 
-<!-- ===== WhatsApp ===== -->
-<a href="https://wa.me/2130673757838" class="whatsapp">💬</a>
-
-<!-- ===== Footer ===== -->
-<footer style="text-align:center;padding:20px;background:#020617;">
-<p>© 2026 جميع الحقوق محفوظة</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
