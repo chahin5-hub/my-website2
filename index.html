@@ -1,198 +1,237 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر احترافي متطور</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجري الاحترافي</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f5f5f5}
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-/* الهيدر */
-header{
-background:#111;
-color:#fff;
-padding:15px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-header h1{font-size:22px}
-
-nav a{
-color:#fff;
-margin:0 10px;
-text-decoration:none;
-font-size:14px;
-}
-
-.cart{
-background:#ffcc00;
-color:#000;
-padding:6px 10px;
-border-radius:5px;
-font-weight:bold;
-}
-
-/* بانر */
-.hero{
-background:linear-gradient(120deg,#111,#333);
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-.hero h2{font-size:30px;margin-bottom:10px}
-.hero p{opacity:0.8}
-
-/* المنتجات */
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-padding:20px;
-}
-
-.card{
-background:white;
-border-radius:12px;
-padding:10px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{transform:scale(1.04)}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.price{
-color:green;
-font-weight:bold;
-margin:5px 0;
-}
-
-button{
-background:#111;
-color:white;
-border:none;
-padding:8px 10px;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{background:#333}
-
-/* الفوتر */
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:20px;
-}
-
-/* السلة */
-#cartBox{
-position:fixed;
-bottom:20px;
-right:20px;
-background:white;
-padding:10px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-width:200px;
-}
-
-#cartBox h4{margin-bottom:10px}
-
-</style>
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-<h1>🛒 متجر احترافي</h1>
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+  🚚 شحن مجاني لجميع الطلبات فوق 300$
+</div>
 
-<nav>
-<a href="#">الرئيسية</a>
-<a href="#products">المنتجات</a>
-<a href="#">تواصل</a>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+  <div class="logo">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span>متجري</span>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="ابحث عن منتج...">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+
+  <div class="nav-icons">
+    <a href="#"><i class="fa-regular fa-heart"></i></a>
+    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="#"><i class="fa-regular fa-user"></i></a>
+  </div>
+
 </nav>
 
-<div class="cart">السلة: <span id="count">0</span></div>
-</header>
+<!-- ================= MENU ================= -->
+<div class="menu">
 
+  <a href="#">الرئيسية</a>
+  <a href="#">المنتجات</a>
+  <a href="#">العروض</a>
+  <a href="#">الإلكترونيات</a>
+  <a href="#">الملابس</a>
+  <a href="#">تواصل معنا</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
 <section class="hero">
-<h2>أفضل المنتجات بأفضل الأسعار</h2>
-<p>متجر حديث سريع واحترافي</p>
-</section>
 
-<section id="products" class="container">
+  <div class="hero-text">
+    <h1>عروض الصيف الكبرى</h1>
+    <p>خصومات تصل حتى 50%</p>
+    <button>تسوق الآن</button>
+  </div>
 
-<div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>ساعة ذكية</h3>
-<p class="price">25$</p>
-<button onclick="addToCart('ساعة ذكية')">أضف للسلة</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>سماعات</h3>
-<p class="price">15$</p>
-<button onclick="addToCart('سماعات')">أضف للسلة</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>هاتف</h3>
-<p class="price">120$</p>
-<button onclick="addToCart('هاتف')">أضف للسلة</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>لابتوب</h3>
-<p class="price">500$</p>
-<button onclick="addToCart('لابتوب')">أضف للسلة</button>
-</div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+  </div>
 
 </section>
 
-<div id="cartBox">
-<h4>🛒 السلة</h4>
-<ul id="cartList"></ul>
-</div>
+<!-- ================= FEATURES ================= -->
+<section class="features">
 
+  <div class="feature">
+    <i class="fa-solid fa-truck"></i>
+    <h3>شحن مجاني</h3>
+    <p>لكل الطلبات</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-shield"></i>
+    <h3>دفع آمن</h3>
+    <p>حماية كاملة</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-rotate-left"></i>
+    <h3>إرجاع سهل</h3>
+    <p>خلال 14 يوم</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-headset"></i>
+    <h3>دعم فني</h3>
+    <p>24/7</p>
+  </div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section">
+
+  <div class="section-title">
+    <h2>منتجات مميزة</h2>
+  </div>
+
+  <div class="products">
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-20%</span>
+
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Nike Air Force</h3>
+
+      <p class="category">أحذية رياضية</p>
+
+      <div class="price">
+        <span class="new-price">$99</span>
+        <span class="old-price">$150</span>
+      </div>
+
+      <button onclick="addToCart('Nike Air Force')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-15%</span>
+
+      <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Apple Watch</h3>
+
+      <p class="category">ساعات ذكية</p>
+
+      <div class="price">
+        <span class="new-price">$250</span>
+        <span class="old-price">$300</span>
+      </div>
+
+      <button onclick="addToCart('Apple Watch')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-30%</span>
+
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Headphones</h3>
+
+      <p class="category">سماعات</p>
+
+      <div class="price">
+        <span class="new-price">$120</span>
+        <span class="old-price">$200</span>
+      </div>
+
+      <button onclick="addToCart('Headphones')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card">
+
+      <span class="sale">-10%</span>
+
+      <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800&auto=format&fit=crop">
+
+      <h3>Smart Phone</h3>
+
+      <p class="category">هواتف</p>
+
+      <div class="price">
+        <span class="new-price">$799</span>
+        <span class="old-price">$999</span>
+      </div>
+
+      <button onclick="addToCart('Smart Phone')">
+        أضف للسلة
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-© 2026 متجر احترافي - جميع الحقوق محفوظة
+
+  <div class="footer-content">
+
+    <div>
+      <h3>متجري</h3>
+      <p>أفضل متجر إلكتروني احترافي</p>
+    </div>
+
+    <div>
+      <h3>روابط</h3>
+      <a href="#">الرئيسية</a>
+      <a href="#">المنتجات</a>
+      <a href="#">تواصل</a>
+    </div>
+
+    <div>
+      <h3>السوشيال ميديا</h3>
+
+      <div class="socials">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
+
+    </div>
+
+  </div>
+
 </footer>
 
-<script>
-let count = 0;
-let cart = [];
-
-function addToCart(item){
-count++;
-document.getElementById('count').innerText = count;
-
-cart.push(item);
-
-let list = document.getElementById('cartList');
-let li = document.createElement('li');
-li.innerText = item;
-list.appendChild(li);
-
-alert(item + ' تمت إضافته للسلة 🛒');
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
